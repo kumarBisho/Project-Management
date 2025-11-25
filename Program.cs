@@ -1,8 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<ProjectManagementContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 
 var app = builder.Build();
 
@@ -33,9 +39,21 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
-app.Run();
-
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
+
+public class ProjectManagementContext : DbContext
+{
+    public ProjectManagementContext(DbContextOptions<ProjectManagementContext> options) : base(options)
+    {
+    }
+    
+    // Add your DbSet properties here
+    // Example: public DbSet<Project> Projects { get; set; }
+    public DbSet<ProjectManagement.Models.User> Users { get; set; }
+
+    public DbSet<ProjectManagement.Models.Project> Projects { get; set; }
+}
+

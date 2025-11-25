@@ -9,7 +9,7 @@ namespace ProjectManagement.Models
         public required DateTime EndDate { get; set; }
         public required string Status { get; set; }
         public required string ManagerName { get; set; }
-        public required List<User> TeamMembers { get; set; }
+        // public required List<User> TeamMembers { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }

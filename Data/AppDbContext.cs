@@ -3,13 +3,14 @@ using ProjectManagement.Models;
 
 namespace ProjectManagementAPI.Data
 {
-    public class AppDbContext : DbContext
+    public class ProjectManagementContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        public ProjectManagementContext(DbContextOptions<ProjectManagementContext> options)
+            : base(options)
         {
         }
 
-        public DbSet<Project> Projects { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Project> Projects { get; set; }
     }
 }
