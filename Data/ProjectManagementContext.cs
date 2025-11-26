@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProjectManagement.Models;
 
-namespace ProjectManagementAPI.Data
+namespace ProjectManagement.Data
 {
     public class ProjectManagementContext : DbContext
     {
@@ -14,3 +14,4 @@ namespace ProjectManagementAPI.Data
         public DbSet<Project> Projects { get; set; }
     }
 }
+
