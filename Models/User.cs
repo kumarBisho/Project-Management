@@ -13,5 +13,6 @@ namespace ProjectManagement.Models
 
         // Many-to-many: user is part of many projects
         public ICollection<Project> TeamProjects { get; set; } = new List<Project>();
+        // public IEnumerable<object> Projects { get; internal set; }
     }
 }

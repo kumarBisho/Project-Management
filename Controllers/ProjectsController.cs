@@ -29,13 +29,6 @@ namespace ProjectManagement.Controllers
                 StartDate = p.StartDate,
                 EndDate = p.EndDate,
                 ManagerName = p.Manager?.Name,
-                // TeamMembers = p.TeamMembers.Select(t => new UserDTO
-                // {
-                //     Id = t.Id,
-                //     Name = t.Name,
-                //     Email = t.Email,
-                //     Role = t.Role
-                // }).ToList()
                 TeamMembers = p.TeamMembers.Select(t => new UserShortDTO
                 {
                     Id = t.Id,
