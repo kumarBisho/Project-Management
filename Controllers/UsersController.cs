@@ -41,7 +41,12 @@ namespace ProjectManagement.Controllers
                 Id = u.Id,
                 Name = u.Name,
                 Email = u.Email,
-                Role = u.Role
+                Role = u.Role,
+                TeamProjects = u.TeamProjects.Select(p => new ProjectShortDTO
+                {
+                    Id = p.Id,
+                    ProjectName = p.ProjectName
+                }).ToList()
             };
         }
 
@@ -52,6 +57,7 @@ namespace ProjectManagement.Controllers
             var users = await _context.Users.ToListAsync();
 
             return users.Select(ToDTO).ToList();
+            // return ToDetailsDTO(users).ToList();
         }
 
         
