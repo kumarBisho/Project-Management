@@ -51,6 +51,7 @@ function UsersList() {
   return (
     <div className="page">
       <h2>Users List</h2>
+      <Link className="btn-primary" to="/users/add">+ Add User</Link>
 
       <div className="list">
         {users.map((u) => (
@@ -88,15 +89,7 @@ function UsersList() {
                     <div key={p.id} className="card" style={{ marginTop: "10px" }}>
                       <h4>{p.projectName}</h4>
                       <p>Status: {p.status}</p>
-                      <p>Manager: {p.managerName || "None"}</p>
-
-                      <p>
-                        Team Members:{" "}
-                        {p.teamMembers?.length > 0
-                          ? p.teamMembers.map((tm) => tm.name).join(", ")
-                          : "No Members"}
-                      </p>
-
+                      
                       <button
                         className="btn-small"
                         onClick={() => (window.location = `/projects/edit/${p.id}`)}

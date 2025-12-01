@@ -18,22 +18,29 @@ function AddUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await api.post("/Users", form);
-    navigate("/users");
+
+    try {
+      await api.post("/Users", form);
+
+      // IMPORTANT → refresh UI
+      navigate("/users");
+    } catch (err) {
+      console.error("Add user failed:", err);
+    }
   };
 
   return (
     <div className="page">
-    <h2>Add User</h2>
+      <h2>Add User</h2>
 
-    <form className="form" onSubmit={handleSubmit}>
-        <input name="name" placeholder="Enter full name" onChange={handleChange} />
-        <input name="email" placeholder="Email address" onChange={handleChange} />
-        <input name="password" placeholder="Password" onChange={handleChange} />
-        <input name="role" placeholder="Role (Admin, Developer, Manager)" onChange={handleChange} />
+      <form className="form" onSubmit={handleSubmit}>
+        <input name="name" placeholder="Full Name" onChange={handleChange} required />
+        <input name="email" placeholder="Email" onChange={handleChange} required />
+        <input name="password" placeholder="Password" onChange={handleChange} required />
+        <input name="role" placeholder="Role" onChange={handleChange} required />
 
         <button className="btn-primary">Create User</button>
-    </form>
+      </form>
     </div>
   );
 }

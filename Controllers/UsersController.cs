@@ -29,7 +29,8 @@ namespace ProjectManagement.Controllers
                 TeamProjects = u.TeamProjects.Select(p => new ProjectShortDTO
                 {
                     Id = p.Id,
-                    ProjectName = p.ProjectName
+                    ProjectName = p.ProjectName,
+                    Status = p.Status
                 }).ToList()
             };
         }
@@ -42,11 +43,6 @@ namespace ProjectManagement.Controllers
                 Name = u.Name,
                 Email = u.Email,
                 Role = u.Role,
-                TeamProjects = u.TeamProjects.Select(p => new ProjectShortDTO
-                {
-                    Id = p.Id,
-                    ProjectName = p.ProjectName
-                }).ToList()
             };
         }
 
