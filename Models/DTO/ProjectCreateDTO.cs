@@ -1,18 +1,14 @@
-namespace ProjectManagement.Models
+namespace ProjectManagement.Models.DTO
 {
-    public class Project
+    public class ProjectCreateDTO
     {
-        public int Id { get; set; }
         public required string ProjectName { get; set; }
         public required string Description { get; set; }
         public required DateTime StartDate { get; set; }
         public required DateTime EndDate { get; set; }
         public required string Status { get; set; }
-        
-        // Manager (one-to-many)
         public int ManagerId { get; set; }
-        public User? Manager { get; set; }
-        public ICollection<User> TeamMembers { get; set; } = new List<User>();
-        public DateTime CreatedAt { get; set; }
+        public List<int> TeamMemberIds { get; set; } = new();
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

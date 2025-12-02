@@ -1,0 +1,139 @@
+/* ===== GENERAL LAYOUT ===== */
+.container, .page {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+/* ===== PAGE TITLES ===== */
+.page h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* ===== FORM CARD ===== */
+.form-card, .form {
+  background: #ffffff;
+  padding: 25px;
+  margin-top: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ===== INPUTS & SELECTS ===== */
+.form input,
+.form textarea,
+.form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  font-size: 15px;
+  transition: border 0.2s ease-in-out;
+}
+
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  border-color: #2563eb;
+  outline: none;
+  background: #fff;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  background: #2563eb;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #64748b;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.btn-danger-small {
+  background: #dc2626;
+  color: white;
+  padding: 6px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-success {
+  background: #16a34a;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-success:hover {
+  background: #15803d;
+}
+
+.btn-small {
+  background: #3b82f6;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 5px;
+  
+}
+
+/* ===== SELECT MULTI ===== */
+.multiselect {
+  height: 120px;
+}
+
+/* ===== PROJECT / USER CARDS ===== */
+.card {
+  background: white;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.10);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #1f2937;
+}
+
+/* ===== LIST DISPLAY ===== */
+.list {
+  margin-top: 20px;
+}
+
+input, textarea {
+  box-sizing: border-box;
+}
